@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday Dani ❤</title>
+    <style>
+
+        /* Fuente ERAS TOUR TAYLOR SWIFT */
+        @font-face {
+            font-family: "fonnts.com-Eloquent-JFSmall-Caps-Pro-";
+            src: url("fuentes/fonnts.com-Eloquent-JFSmall-Caps-Pro-.otf") format("truetype");
+            font-weight: normal;
+            font-style: normal;
+        }
+        
+        /* Fuente REPUTATION */
+        @font-face {
+            font-family: "Engravers Old English";
+            src: url("fuentes/OPTIEngraversOldEnglish.otf") format("truetype");
+            font-weight: normal;
+            font-style: normal;
+        }
+        
+        /* Fuente TAYLOR SWIFT DEBUT */
+        @font-face {
+            font-family: "Satisfaction";
+            src: url("fuentes/Satisfaction.ttf") format("truetype");
+            font-weight: normal;
+            font-style: normal;
+        }
+        
+        /* Fuente LOVER */
+        @font-face {
+            font-family: "Satisfy";
+            src: url("fuentes/Satisfy-Regular.ttf") format("truetype");
+            font-weight: normal;
+            font-style: normal;
+        }
+
+        /* Fuente RED */
+        @font-face {
+            font-family: "Tungsten Condensed";
+            src: url("fuentes/tungsten-condensed-medium.ttf") format("truetype");
+            font-weight: normal;
+            font-style: normal;
+        }
+
+        /* Fuente FEARLESS TS */
+        @font-face {
+            font-family: "Carla Sans Light";
+            src: url("fuentes/carla-sans-light.ttf") format("truetype");
+            font-weight: normal;
+            font-style: normal;
+        }
+
+        /* Fuente 1989 TV */
+        @font-face {
+            font-family: "Taylor Swift Handwriting";
+            src: url("fuentes/Taylor\ Swift\ Handwriting.ttf") format("truetype");
+            font-weight: normal;
+            font-style: normal;
+        }
+
+        /* Fuente SPEAK NOW */
+        @font-face {
+            font-family: "Jellyka Bees Antique Handwriting";
+            src: url("fuentes/Jellyka\ Bees\ Antique\ Handwriting.ttf") format("truetype");
+            font-weight: normal;
+            font-style: normal;
+        }
+
+        /* Fuente FOLKLORE TS */
+        @font-face {
+            font-family: "FePIit2";
+            src: url("fuentes/FePIit2.ttf") format("truetype");
+            font-weight: normal;
+            font-style: normal;
+        }
+
+        /* Fuente EVERMORE TS */
+        @font-face {
+            font-family: "FePIit2";
+            src: url("fuentes/FePIit2.ttf") format("truetype");
+            font-weight: normal;
+            font-style: normal;
+        }
+
+        /* Fuente MIDNIGHTS TS */
+        @font-face {
+            font-family: "NeueHaasDisplay-Bold";
+            src: url("fuentes/NeueHaasDisplay-Bold.ttf") format("truetype");
+            font-weight: normal;
+            font-style: normal;
+        }
+
+        /* Fuente TTPD TS */
+        @font-face {
+            font-family: "BigCaslonFB-Regular";
+            src: url("fuentes/BigCaslonFB-Regular.ttf") format("truetype");
+            font-weight: normal;
+            font-style: normal;
+        }
+
+        body {
+            margin: 0;
+            font-family: "Engravers Old English", serif;
+            background-image: url('https://wallpapercave.com/wp/wp12211057.png');
+            background-size: cover;
+            background-attachment: fixed;
+            background-position: center;
+            color: white;
+            text-align: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            overflow: hidden;
+            position: relative;
+            transition: all 1s ease; /* Transición suave */
+        }
+
+        body::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.6);
+            z-index: 0;
+        }
+
+        #content {
+            position: relative;
+            z-index: 1;
+        }
+
+        #countdown {
+            font-size: 3.5rem;
+            font-family: "Engravers Old English", serif;
+            background: rgba(0, 0, 0, 0.7);
+            padding: 1rem 2rem;
+            border-radius: 10px;
+            display: inline-block;
+            animation: fadeIn 2s ease-in-out;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            animation: fadeInDown 2s ease-in-out;
+            font-family: "Engravers Old English", serif;
+        }
+
+        .era-button {
+            font-size: 2rem;
+            padding: 1rem;
+            margin: 1rem;
+            background-color: rgba(0, 0, 0, 0.8);
+            border: none;
+            border-radius: 8px;
+            color: white;
+            cursor: pointer;
+            transition: transform 0.2s;
+        }
+
+        .era-button:hover {
+            transform: scale(1.1);
+        }
+
+        .era-info {
+            margin-top: 2rem;
+            font-size: 1.5rem;
+        }
+    </style>
+</head>
+<body>
+    <div id="content">
+        <h1>Cuenta Regresiva para una Sorpresa Especial</h1>
+        <div id="countdown">Faltan 00:00:00</div>
+        <div id="eraButtons" style="display: none;">
+            <!-- Botones de los álbumes -->
+            <button class="era-button" onclick="showAlbumInfo('Taylor Swift')">Taylor Swift</button>
+            <button class="era-button" onclick="showAlbumInfo('Fearless')">Fearless</button>
+            <button class="era-button" onclick="showAlbumInfo('Speak Now')">Speak Now</button>
+            <button class="era-button" onclick="showAlbumInfo('Red')">Red</button>
+            <button class="era-button" onclick="showAlbumInfo('1989')">1989</button>
+            <button class="era-button" onclick="showAlbumInfo('Reputation')">Reputation</button>
+            <button class="era-button" onclick="showAlbumInfo('Lover')">Lover</button>
+            <button class="era-button" onclick="showAlbumInfo('folklore')">folklore</button>
+            <button class="era-button" onclick="showAlbumInfo('evermore')">evermore</button>
+            <button class="era-button" onclick="showAlbumInfo('Midnights')">Midnights</button>
+            <button class="era-button" onclick="showAlbumInfo('TTPD')">TTPD</button>
+            
+        </div>
+        <div id="albumInfo" class="era-info"></div>
+    </div>
+
+    <script>
+        const targetDate = new Date('2024-12-19T00:00:00').getTime();
+
+        const albumData = {
+            "Taylor Swift": {
+                "song": "musica/Taylor Swift - Tim McGraw.mp3",
+                "quote": "You said the way my blue eyes shined.",
+                "backgroundImage": "url('https://i.pinimg.com/736x/2b/ed/89/2bed899d3742fa6c567a179c88eebef7.jpg')",
+                "fontFamily": "'Satisfaction', serif"
+            },
+            "Fearless": {
+                "song": "musica/Taylor Swift - Fearless.mp3",
+                "quote": "I'd dance in a storm in my best dress.",
+                "backgroundImage": "url('https://i.pinimg.com/736x/25/94/f7/2594f746238b4df4e44f9815642375cf.jpg')",
+                "fontFamily": "'Carla Sans Light', serif"
+            },
+            "Speak Now": {
+                "song": "musica/Taylor Swift - Mine.mp3",
+                "quote": "You made a rebel of a careless man's careful daughter.",
+                "backgroundImage": "url('https://i.pinimg.com/originals/79/69/23/79692382e3d44b00a29d0b3c03209fa4.jpg')",
+                "fontFamily": "'Jellyka Bees Antique Handwriting', serif"
+            },
+            "Red": {
+                "song": "musica/Taylor Swift - All Too Well.mp3",
+                "quote": "Maybe we got lost in translation.",
+                "backgroundImage": "url('https://i.pinimg.com/originals/0d/31/6d/0d316d2fca681a08c216a814badeb451.png')",
+                "fontFamily": "'Tungsten Condensed', serif"
+            },
+            "1989": {
+                "song": "musica/Taylor Swift - Slut!.mp3",
+                "quote": "everyone wants him, that was my crime",
+                "backgroundImage": "url('https://i.pinimg.com/originals/53/57/49/535749a6107e457685922e19ce2606e3.png')",
+                "fontFamily": "'Taylor Swift Handwriting', sans-serif"
+            },
+            "Reputation": {
+                "song": "musica/Taylor Swift - Look What You Made Me Do.mp3",
+                "quote": "I want to wear his initial in chain round my neck.",
+                "backgroundImage": "url('https://i.pinimg.com/originals/5c/ac/07/5cac0757c84967d9764d93ce318670e3.jpg')",
+                "fontFamily": "'Engravers Old English', serif"
+            },
+            "Lover": {
+                "song": "musica/Taylor Swift - Lover.mp3",
+                "quote": "We could leave the Christmas lights up 'til January.",
+                "backgroundImage": "url('https://i.pinimg.com/originals/b1/e0/e9/b1e0e964732b710b2dab05c35d36a2fe.jpg')",
+                "fontFamily": "'Satisfy', cursive"
+            },
+            "folklore": {
+                "song": "musica/Taylor Swift - Anti-hero.mp3",
+                "quote": "I persist and resist to ask you if something have different today",
+                "backgroundImage": "url('https://i.pinimg.com/736x/05/c2/cf/05c2cffe4e8f9989f83320c0a7c3f177.jpg')",
+                "fontFamily": "'NeueHaasDisplay-Bold', serif"
+            },
+            "evermore": {
+                "song": "musica/Taylor Swift - Anti-hero.mp3",
+                "quote": "evermore",
+                "backgroundImage": "url('https://i.pinimg.com/originals/ec/78/f2/ec78f21043a5f00d1d36de90e81270e7.png')",
+                "fontFamily": "'NeueHaasDisplay-Bold', serif"
+            },
+            "Midnights": {
+                "song": "musica/Taylor Swift - Anti-hero.mp3",
+                "quote": "He never thinks of me except when I'm on TV",
+                "backgroundImage": "url('https://i.pinimg.com/736x/e3/a1/5d/e3a15dc996037de76749428e9817056f.jpg')",
+                "fontFamily": "'NeueHaasDisplay-Bold', serif"
+            },
+            "TTPD": {
+                "song": "musica/Taylor Swift - So high School.mp3",
+                "quote": "I feel so high school.",
+                "congrats": "HAPPY BIRTHDAY",
+                "backgroundImage": "url('https://i.pinimg.com/originals/f5/1f/b9/f51fb9a343f64ce807c36deb112274f0.jpg')",
+                "fontFamily": "'BigCaslonFB-Regular', serif"
+            }
+        };
+
+        const countdownInterval = setInterval(() => {
+    const now = new Date().getTime();
+    const distance = targetDate - now;
+
+    if (distance <= 0) {
+        clearInterval(countdownInterval);
+        document.getElementById("countdown").style.display = "none"; // Oculta la cuenta regresiva
+        document.getElementById("eraButtons").style.display = "block"; // Muestra los botones
+        
+        document.getElementById("countdown").innerHTML = "&#127881; ¡Sorpresa Revelada! &#127881;";
+                document.querySelector('h1').innerText = "¡Feliz Cumpleaños!";
+    } else {
+        const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+            document.getElementById("countdown").innerHTML = `Faltan ${days}d ${hours}h ${minutes}m ${seconds}s`;
+
+    }
+}, 1000);
+
+
+        function showAlbumInfo(album) {
+            const albumInfo = albumData[album];
+            document.body.style.backgroundImage = albumInfo.backgroundImage;
+            document.body.style.fontFamily = albumInfo.fontFamily;
+            document.body.style.fontFamily = albumInfo.fontFamily;
+            document.getElementById("albumInfo").innerHTML = `<strong>${album}</strong><br>Frase: "${albumInfo.quote}"`;
+
+            const audio = new Audio(albumInfo.song);
+            audio.play();
+        }
+    </script>
+</body>
+</html>
