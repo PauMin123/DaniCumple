@@ -163,7 +163,53 @@
             color: white;
             cursor: pointer;
             transition: transform 0.2s;
+            transition: transform 0.2s, background-color 0.3s;  /* Agregar transición suave */
         }
+
+        /* Fuentes específicas por color */
+.era-button[data-color="#A5C9A5"] {
+    font-family: "Satisfaction", serif;  /* Fuente para Taylor Swift */
+}
+
+.era-button[data-color="#EFC180"] {
+    font-family: "Carla Sans Light", serif;  /* Fuente para Fearless */
+}
+
+.era-button[data-color="#C7A8CB"] {
+    font-family: "Jellyka Bees Antique Handwriting", serif;  /* Fuente para Speak Now */
+}
+
+.era-button[data-color="#7A2E39"] {
+    font-family: "Tungsten Condensed", serif;  /* Fuente para Red */
+}
+
+.era-button[data-color="#B5E5F8"] {
+    font-family: "Taylor Swift Handwriting", sans-serif;  /* Fuente para 1989 */
+}
+
+.era-button[data-color="#746F70"] {
+    font-family: "Engravers Old English", cursive;  /* Fuente para Reputation */
+}
+
+.era-button[data-color="#F7B0CC"] {
+    font-family: "Satisfy", serif;  /* Fuente para Lover */
+}
+
+.era-button[data-color="#CDC9C1"] {
+    font-family: "FePIit2", serif;  /* Fuente para folklore */
+}
+
+.era-button[data-color="#C5AC90"] {
+    font-family: "FePIit2", serif;  /* Fuente para evermore */
+}
+
+.era-button[data-color="#242E47"] {
+    font-family: "NeueHaasDisplay-Bold", serif;  /* Fuente para Midnights */
+}
+
+.era-button[data-color="#544C3C"] {
+    font-family: "BigCaslonFB-Regular", serif;  /* Fuente para TTPD */
+}
 
         .era-button:hover {
             transform: scale(1.1);
@@ -173,32 +219,43 @@
             margin-top: 2rem;
             font-size: 1.5rem;
         }
+
+        /* Ocultar el reproductor de audio */
+        #audioPlayer {
+            display: none;
+        }
+        
     </style>
 </head>
 <body>
     <div id="content">
-        <h1>Cuenta Regresiva para una Sorpresa Especial</h1>
+        <h1>"A veces, los mejores regalos toman tiempo. Cada segundo nos acerca más a algo único ¿Estás lista?"</h1>
         <div id="countdown">Faltan 00:00:00</div>
         <div id="eraButtons" style="display: none;">
+            <audio id="audioPlayer" controls>
+                <source id="audioSource" src="" type="audio/mpeg">
+                Tu navegador no soporta el elemento de audio.
+            </audio>
+
             <!-- Botones de los álbumes -->
-            <button class="era-button" onclick="showAlbumInfo('Taylor Swift')">Taylor Swift</button>
-            <button class="era-button" onclick="showAlbumInfo('Fearless')">Fearless</button>
-            <button class="era-button" onclick="showAlbumInfo('Speak Now')">Speak Now</button>
-            <button class="era-button" onclick="showAlbumInfo('Red')">Red</button>
-            <button class="era-button" onclick="showAlbumInfo('1989')">1989</button>
-            <button class="era-button" onclick="showAlbumInfo('Reputation')">Reputation</button>
-            <button class="era-button" onclick="showAlbumInfo('Lover')">Lover</button>
-            <button class="era-button" onclick="showAlbumInfo('folklore')">folklore</button>
-            <button class="era-button" onclick="showAlbumInfo('evermore')">evermore</button>
-            <button class="era-button" onclick="showAlbumInfo('Midnights')">Midnights</button>
-            <button class="era-button" onclick="showAlbumInfo('TTPD')">TTPD</button>
+            <button class="era-button" data-color="#A5C9A5"  onclick="showAlbumInfo('Taylor Swift')">Taylor Swift</button>
+            <button class="era-button" data-color="#EFC180" onclick="showAlbumInfo('Fearless')">Fearless</button>
+            <button class="era-button" data-color="#C7A8CB" onclick="showAlbumInfo('Speak Now')">Speak Now</button>
+            <button class="era-button" data-color="#7A2E39" onclick="showAlbumInfo('Red')">Red</button>
+            <button class="era-button" data-color="#B5E5F8" onclick="showAlbumInfo('1989')">1989</button>
+            <button class="era-button" data-color="#746F70" onclick="showAlbumInfo('Reputation')">Reputation</button>
+            <button class="era-button" data-color="#F7B0CC" onclick="showAlbumInfo('Lover')">Lover</button>
+            <button class="era-button" data-color="#CDC9C1" onclick="showAlbumInfo('folklore')">folklore</button>
+            <button class="era-button" data-color="#C5AC90" onclick="showAlbumInfo('evermore')">evermore</button>
+            <button class="era-button" data-color="#242E47" onclick="showAlbumInfo('Midnights')">Midnights</button>
+            <button class="era-button" data-color="#544C3C" onclick="showAlbumInfo('TTPD')">TTPD</button>
             
         </div>
         <div id="albumInfo" class="era-info"></div>
     </div>
 
     <script>
-        const targetDate = new Date('2024-12-19T00:00:00').getTime();
+        const targetDate = new Date('2024-12-20T00:00:00').getTime();
 
         const albumData = {
             "Taylor Swift": {
@@ -208,7 +265,7 @@
                 "fontFamily": "'Satisfaction', serif"
             },
             "Fearless": {
-                "song": "musica/Taylor Swift - Fearless.mp3",
+                "song": "musica/Taylor Swift - You Belong With Me.mp3",
                 "quote": "I'd dance in a storm in my best dress.",
                 "backgroundImage": "url('https://i.pinimg.com/736x/25/94/f7/2594f746238b4df4e44f9815642375cf.jpg')",
                 "fontFamily": "'Carla Sans Light', serif"
@@ -232,8 +289,8 @@
                 "fontFamily": "'Taylor Swift Handwriting', sans-serif"
             },
             "Reputation": {
-                "song": "musica/Taylor Swift - Look What You Made Me Do.mp3",
-                "quote": "I want to wear his initial in chain round my neck.",
+                "song": "musica/Taylor Swift - Delicate.mp3",
+                "quote": "Cause I know is delicate ❤",
                 "backgroundImage": "url('https://i.pinimg.com/originals/5c/ac/07/5cac0757c84967d9764d93ce318670e3.jpg')",
                 "fontFamily": "'Engravers Old English', serif"
             },
@@ -262,9 +319,8 @@
                 "fontFamily": "'NeueHaasDisplay-Bold', serif"
             },
             "TTPD": {
-                "song": "musica/Taylor Swift - So high School.mp3",
-                "quote": "I feel so high school.",
-                "congrats": "HAPPY BIRTHDAY",
+                "song": "musica/Taylor Swift -  So High School.mp3",
+                "quote": "Hoy, en tu cumpleaños, celebro todo lo que eres. Como en 'So High School', cada momento contigo se siente único, como nuestra propia historia. Me encanta cómo esa canción refleja lo que compartimos. ¡Feliz Cumpleaños Dani ❤.",
                 "backgroundImage": "url('https://i.pinimg.com/originals/f5/1f/b9/f51fb9a343f64ce807c36deb112274f0.jpg')",
                 "fontFamily": "'BigCaslonFB-Regular', serif"
             }
@@ -280,7 +336,7 @@
         document.getElementById("eraButtons").style.display = "block"; // Muestra los botones
         
         document.getElementById("countdown").innerHTML = "&#127881; ¡Sorpresa Revelada! &#127881;";
-                document.querySelector('h1').innerText = "¡Feliz Cumpleaños!";
+                document.querySelector('h1').innerText = "Feliz Cumpleaños ❤";
     } else {
         const days = Math.floor(distance / (1000 * 60 * 60 * 24));
             const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
@@ -293,16 +349,49 @@
 }, 1000);
 
 
-        function showAlbumInfo(album) {
-            const albumInfo = albumData[album];
-            document.body.style.backgroundImage = albumInfo.backgroundImage;
-            document.body.style.fontFamily = albumInfo.fontFamily;
-            document.body.style.fontFamily = albumInfo.fontFamily;
-            document.getElementById("albumInfo").innerHTML = `<strong>${album}</strong><br>Frase: "${albumInfo.quote}"`;
+function showAlbumInfo(albumName) {
+    const album = albumData[albumName];
 
-            const audio = new Audio(albumInfo.song);
-            audio.play();
-        }
+    if (album) {
+        // Cambiar el fondo de pantalla
+        document.body.style.transition = "background-image 1s ease-in-out";
+        document.body.style.backgroundImage = album.backgroundImage;
+
+        // Cambiar la fuente
+        document.querySelector('h1').style.fontFamily = album.fontFamily;
+
+        // Mostrar la cita
+        document.getElementById('albumInfo').style.fontFamily = album.fontFamily;
+        document.getElementById("albumInfo").innerText = album.quote;
+
+          // Cargar y reproducir la canción
+    const audioPlayer = document.getElementById("audioPlayer");
+    const audioSource = document.getElementById("audioSource");
+
+    if (album.song) {  // Si existe una canción definida
+        audioSource.src = album.song;  // Establece la ruta a la canción
+        audioPlayer.load();  // Carga el archivo de audio
+        audioPlayer.play();  // Reproduce automáticamente
+    } else {
+        audioSource.src = "";  // Si no hay canción, detiene la reproducción
+        audioPlayer.load();
+    }
+}
+    }
+
+// Función para cambiar el color del botón cuando se pasa el cursor
+document.querySelectorAll('.era-button').forEach(button => {
+    button.addEventListener('mouseenter', function() {
+        const color = this.getAttribute('data-color');
+        this.style.backgroundColor = color;  // Cambia el color del fondo dinámicamente
+    });
+    
+    button.addEventListener('mouseleave', function() {
+        this.style.backgroundColor = '';  // Vuelve al color original cuando el cursor sale
+    });
+});
+
+
     </script>
 </body>
 </html>
