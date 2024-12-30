@@ -134,16 +134,19 @@
         #content {
             position: relative;
             z-index: 1;
+            max-width: 90%;
+            padding: 2rem;
         }
 
         #countdown {
-            font-size: 3.5rem;
+            font-size: 3rem;
             font-family: "Engravers Old English", serif;
             background: rgba(0, 0, 0, 0.7);
             padding: 1rem 2rem;
             border-radius: 10px;
             display: inline-block;
             animation: fadeIn 2s ease-in-out;
+            margin-bottom: 1rem;
         }
 
         h1 {
@@ -154,16 +157,17 @@
         }
 
         .era-button {
-            font-size: 2rem;
+            font-size: 1.5rem;
             padding: 1rem;
-            margin: 1rem;
+            margin: 0.5rem;
             background-color: rgba(0, 0, 0, 0.8);
             border: none;
             border-radius: 8px;
             color: white;
             cursor: pointer;
-            transition: transform 0.2s;
-            transition: transform 0.2s, background-color 0.3s;  /* Agregar transición suave */
+            transition: transform 0.2s, background-color 0.3s;
+            min-width: 150px;  /* Asegura un tamaño mínimo en dispositivos pequeños */
+            font-weight: bold;
         }
 
         /* Fuentes específicas por color */
@@ -218,6 +222,7 @@
         .era-info {
             margin-top: 2rem;
             font-size: 1.5rem;
+            line-height: 1.5;
         }
 
         /* Ocultar el reproductor de audio */
@@ -313,7 +318,7 @@
                 "fontFamily": "'NeueHaasDisplay-Bold', serif"
             },
             "Midnights": {
-                "song": "musica/Taylor Swift - Anti-hero.mp3",
+                "song": "musica/Taylor Swift - Snow On The Beach.mp3",
                 "quote": "He never thinks of me except when I'm on TV",
                 "backgroundImage": "url('https://i.pinimg.com/736x/e3/a1/5d/e3a15dc996037de76749428e9817056f.jpg')",
                 "fontFamily": "'NeueHaasDisplay-Bold', serif"
