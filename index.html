@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Happy Birthday Dani ❤</title>
+    <title>Happy Birthday ❤️ </title>
     <style>
 
         /* Fuente ERAS TOUR TAYLOR SWIFT */
@@ -102,6 +102,13 @@
             font-style: normal;
         }
 
+
+        #quote {
+            font-size: 1.5rem;
+            font-family: "Engravers Old English", serif;
+            margin-top: 20px;
+        }
+
         body {
             margin: 0;
             font-family: "Engravers Old English", serif;
@@ -136,6 +143,8 @@
             z-index: 1;
             max-width: 90%;
             padding: 2rem;
+            overflow-y: auto; /* Permite el desplazamiento vertical */
+            max-height: 90vh; /* Asegura que el contenido no sobrepase la altura de la pantalla */
         }
 
         #countdown {
@@ -170,50 +179,50 @@
             font-weight: bold;
         }
 
-        /* Fuentes específicas por color */
-.era-button[data-color="#A5C9A5"] {
-    font-family: "Satisfaction", serif;  /* Fuente para Taylor Swift */
-}
+     /* Fuentes específicas por color */
+        .era-button[data-color="#A5C9A5"] {
+            font-family: "Satisfaction", serif;  /* Fuente para Taylor Swift */
+        }
 
-.era-button[data-color="#EFC180"] {
-    font-family: "Carla Sans Light", serif;  /* Fuente para Fearless */
-}
+        .era-button[data-color="#EFC180"] {
+            font-family: "Carla Sans Light", serif;  /* Fuente para Fearless */
+        }
 
-.era-button[data-color="#C7A8CB"] {
-    font-family: "Jellyka Bees Antique Handwriting", serif;  /* Fuente para Speak Now */
-}
+        .era-button[data-color="#C7A8CB"] {
+            font-family: "Jellyka Bees Antique Handwriting", serif;  /* Fuente para Speak Now */
+        }
 
-.era-button[data-color="#7A2E39"] {
-    font-family: "Tungsten Condensed", serif;  /* Fuente para Red */
-}
+        .era-button[data-color="#7A2E39"] {
+            font-family: "Tungsten Condensed", serif;  /* Fuente para Red */
+        }
 
-.era-button[data-color="#B5E5F8"] {
-    font-family: "Taylor Swift Handwriting", sans-serif;  /* Fuente para 1989 */
-}
+        .era-button[data-color="#B5E5F8"] {
+            font-family: "Taylor Swift Handwriting", sans-serif;  /* Fuente para 1989 */
+        }
 
-.era-button[data-color="#746F70"] {
-    font-family: "Engravers Old English", cursive;  /* Fuente para Reputation */
-}
+        .era-button[data-color="#746F70"] {
+            font-family: "Engravers Old English", cursive;  /* Fuente para Reputation */
+        }
 
-.era-button[data-color="#F7B0CC"] {
-    font-family: "Satisfy", serif;  /* Fuente para Lover */
-}
+        .era-button[data-color="#F7B0CC"] {
+            font-family: "Satisfy", serif;  /* Fuente para Lover */
+        }
 
-.era-button[data-color="#CDC9C1"] {
-    font-family: "FePIit2", serif;  /* Fuente para folklore */
-}
+        .era-button[data-color="#CDC9C1"] {
+            font-family: "FePIit2", serif;  /* Fuente para folklore */
+        }
 
-.era-button[data-color="#C5AC90"] {
-    font-family: "FePIit2", serif;  /* Fuente para evermore */
-}
+        .era-button[data-color="#C5AC90"] {
+            font-family: "FePIit2", serif;  /* Fuente para evermore */
+        }
 
-.era-button[data-color="#242E47"] {
-    font-family: "NeueHaasDisplay-Bold", serif;  /* Fuente para Midnights */
-}
+        .era-button[data-color="#242E47"] {
+            font-family: "NeueHaasDisplay-Bold", serif;  /* Fuente para Midnights */
+        }
 
-.era-button[data-color="#544C3C"] {
-    font-family: "BigCaslonFB-Regular", serif;  /* Fuente para TTPD */
-}
+        .era-button[data-color="#544C3C"] {
+            font-family: "BigCaslonFB-Regular", serif;  /* Fuente para TTPD */
+        }
 
         .era-button:hover {
             transform: scale(1.1);
@@ -260,72 +269,72 @@
     </div>
 
     <script>
-        const targetDate = new Date('2024-12-20T00:00:00').getTime();
+        const targetDate = new Date('2025-04-12T00:00:00').getTime();
 
         const albumData = {
             "Taylor Swift": {
                 "song": "musica/Taylor Swift - Tim McGraw.mp3",
-                "quote": "No importa lo que pase, siempre estaré para ti",
+                "quote": "Pase lo que pase, seré tu siempre, en la sombra y en la luz ❤️",
                 "backgroundImage": "url('https://i.pinimg.com/736x/2b/ed/89/2bed899d3742fa6c567a179c88eebef7.jpg')",
                 "fontFamily": "'Satisfaction', serif"
             },
             "Fearless": {
                 "song": "musica/Taylor Swift - You Belong With Me.mp3",
-                "quote": "I'd dance in a storm in my best dress.",
+                "quote": "Esta canción me lleva a ti porque todo lo que buscaba siempre fuiste tú ❤️",
                 "backgroundImage": "url('https://i.pinimg.com/736x/25/94/f7/2594f746238b4df4e44f9815642375cf.jpg')",
                 "fontFamily": "'Carla Sans Light', serif"
             },
             "Speak Now": {
                 "song": "musica/Taylor Swift - Ours.mp3",
-                "quote": "This Love is ours",
+                "quote": "Nuestro amor no es perfecto, pero es nuestro y pase lo que pase, siempre estaré contigo ❤️",
                 "backgroundImage": "url('https://i.pinimg.com/originals/79/69/23/79692382e3d44b00a29d0b3c03209fa4.jpg')",
                 "fontFamily": "'Jellyka Bees Antique Handwriting', serif"
             },
             "Red": {
                 "song": "musica/Taylor Swift - Everything Has Changed.mp3",
-                "quote": "Maybe we got lost in translation.",
+                "quote": "Desde que te conocí, cambió mi forma de ver el mundo me hiciste creer en el amor, y en que todo es hermoso si estás con la persona correcta. ❤️",
                 "backgroundImage": "url('https://i.pinimg.com/originals/0d/31/6d/0d316d2fca681a08c216a814badeb451.png')",
                 "fontFamily": "'Tungsten Condensed', serif"
             },
             "1989": {
                 "song": "musica/Taylor Swift - This Love.mp3",
-                "quote": "everyone wants him, that was my crime",
+                "quote": "Aunque este amor sea complicado, siempre vuelve y eso solo me confirma que es nuestro destino. Te amo con todo mi corazón. ❤️",
                 "backgroundImage": "url('https://i.pinimg.com/originals/53/57/49/535749a6107e457685922e19ce2606e3.png')",
                 "fontFamily": "'Taylor Swift Handwriting', sans-serif"
             },
             "Reputation": {
                 "song": "musica/Taylor Swift - Delicate.mp3",
-                "quote": "Cause I know is delicate ❤",
+                "quote": "Tú eres como un tulipán: hermosa y delicada y yo solo quiero cuidarte cada día, porque sé que este amor es real,aunque el mundo no lo entienda. ❤️",
                 "backgroundImage": "url('https://i.pinimg.com/originals/5c/ac/07/5cac0757c84967d9764d93ce318670e3.jpg')",
                 "fontFamily": "'Engravers Old English', serif"
             },
             "Lover": {
                 "song": "musica/Taylor Swift - Lover.mp3",
-                "quote": "We could leave the Christmas lights up 'til January.",
+                "quote": "Aunque nuestra relación sea complicada, siempre quiero estar a tu lado, ser tu hogar, tu refugio, tu todo. Mi vida tiene sentido solo contigo. ❤️",
                 "backgroundImage": "url('https://i.pinimg.com/originals/b1/e0/e9/b1e0e964732b710b2dab05c35d36a2fe.jpg')",
                 "fontFamily": "'Satisfy', cursive"
             },
             "folklore": {
                 "song": "musica/Taylor Swift  invisible string.mp3",
-                "quote": "I persist and resist to ask you if something have different today",
+                "quote": "Tú y yo estamos unidos por un hilo dorado, un lazo irrompible, el hilo rojo del destino. Sabemos que estamos destinados a estar juntos, sin importar lo que pase. ❤️",
                 "backgroundImage": "url('https://i.pinimg.com/736x/05/c2/cf/05c2cffe4e8f9989f83320c0a7c3f177.jpg')",
                 "fontFamily": "'NeueHaasDisplay-Bold', serif"
             },
             "evermore": {
                 "song": "musica/Taylor Swift - willow.mp3",
-                "quote": "evermore",
+                "quote": "A donde sea que vayas, iré contigo, porque mi lugar está siempre a tu lado. ❤️",
                 "backgroundImage": "url('https://i.pinimg.com/originals/ec/78/f2/ec78f21043a5f00d1d36de90e81270e7.png')",
                 "fontFamily": "'NeueHaasDisplay-Bold', serif"
             },
             "Midnights": {
                 "song": "musica/Taylor Swift - Snow On The Beach.mp3",
-                "quote": "He never thinks of me except when I'm on TV",
+                "quote": "Enamorarse de ti es como ver nieve en la playa algo irreal, pero maravillosamente hermoso. Esta canción refleja lo que siento por ti. ❤️",
                 "backgroundImage": "url('https://i.pinimg.com/736x/e3/a1/5d/e3a15dc996037de76749428e9817056f.jpg')",
                 "fontFamily": "'NeueHaasDisplay-Bold', serif"
             },
             "TTPD": {
                 "song": "musica/Taylor Swift -  So High School.mp3",
-                "quote": "Hoy, en tu cumpleaños, celebro todo lo que eres. Como en 'So High School', cada momento contigo se siente único, como nuestra propia historia. Me encanta cómo esa canción refleja lo que compartimos. ¡Feliz Cumpleaños Dani ❤.",
+                "quote": "Porque cada vez que te veo, me siento como si estuviera en la escuela secundaria de nuevo, lleno de emoción y esperanza. ❤️",
                 "backgroundImage": "url('https://i.pinimg.com/originals/f5/1f/b9/f51fb9a343f64ce807c36deb112274f0.jpg')",
                 "fontFamily": "'BigCaslonFB-Regular', serif"
             }
