@@ -110,22 +110,31 @@
         }
 
         body {
-            margin: 0;
-            font-family: "Engravers Old English", serif;
-            background-image: url('https://wallpapercave.com/wp/wp12211057.png');
-            background-size: cover;
-            background-attachment: fixed;
-            background-position: center;
-            color: white;
-            text-align: center;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            overflow: hidden;
-            position: relative;
-            transition: all 1s ease; /* Transición suave */
-        }
+    margin: 0;
+    font-family: "Engravers Old English", serif;
+    background-image: url('https://wallpapers.com/images/hd/taylor-swift-eras-tour-collage-82og9kwimlgby9ue.jpg');
+    background-size: cover; /* Asegura que la imagen cubra el área disponible */
+    background-position: center center; /* Centra la imagen */
+    background-attachment: fixed; /* Fija la imagen al hacer scroll */
+    color: white;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden;
+    position: relative;
+    transition: all 1s ease; /* Transición suave */
+}
+
+/* Añadimos media queries para asegurar que la imagen se vea bien en dispositivos pequeños */
+@media (max-width: 768px) {
+    body {
+        background-attachment: scroll; /* Evita que la imagen se quede fija en pantallas más pequeñas */
+        background-size: cover; /* Mantiene la imagen cubierta, sin distorsión */
+    }
+}
+
 
         body::after {
             content: "";
@@ -275,19 +284,19 @@
             "Taylor Swift": {
                 "song": "musica/Taylor Swift - Tim McGraw.mp3",
                 "quote": "Pase lo que pase, seré tu siempre, en la sombra y en la luz ❤️",
-                "backgroundImage": "url('https://i.pinimg.com/736x/2b/ed/89/2bed899d3742fa6c567a179c88eebef7.jpg')",
+                "backgroundImage": "url('https://i.pinimg.com/originals/49/b9/47/49b9475075332d039fbdbddaafb1d0a0.jpg')",
                 "fontFamily": "'Satisfaction', serif"
             },
             "Fearless": {
                 "song": "musica/Taylor Swift - You Belong With Me.mp3",
                 "quote": "Esta canción me lleva a ti porque todo lo que buscaba siempre fuiste tú ❤️",
-                "backgroundImage": "url('https://i.pinimg.com/736x/25/94/f7/2594f746238b4df4e44f9815642375cf.jpg')",
+                "backgroundImage": "url('fuentes/Fearless.jpg')",
                 "fontFamily": "'Carla Sans Light', serif"
             },
             "Speak Now": {
                 "song": "musica/Taylor Swift - Ours.mp3",
                 "quote": "Nuestro amor no es perfecto, pero es nuestro y pase lo que pase, siempre estaré contigo ❤️",
-                "backgroundImage": "url('https://i.pinimg.com/originals/79/69/23/79692382e3d44b00a29d0b3c03209fa4.jpg')",
+                "backgroundImage": "url('https://i.pinimg.com/736x/fb/59/0a/fb590a96e196462ccaa4d6a6ad260b53.jpg')",
                 "fontFamily": "'Jellyka Bees Antique Handwriting', serif"
             },
             "Red": {
@@ -335,7 +344,6 @@
             "TTPD": {
                 "song": "musica/Taylor Swift -  So High School.mp3",
                 "quote": "Porque cada vez que te veo, me siento como si estuviera en la escuela secundaria de nuevo, lleno de emoción y esperanza. ❤️",
-                "quote": "Porque cada vez que te veo, me siento como si estuviera en la escuela secundaria de nuevo, lleno de emoción y esperanza. ❤️",
                 "backgroundImage": "url('https://i.pinimg.com/originals/f5/1f/b9/f51fb9a343f64ce807c36deb112274f0.jpg')",
                 "fontFamily": "'BigCaslonFB-Regular', serif"
             }
@@ -351,7 +359,7 @@
         document.getElementById("eraButtons").style.display = "block"; // Muestra los botones
         
         document.getElementById("countdown").innerHTML = "&#127881; ¡Sorpresa Revelada! &#127881;";
-                document.querySelector('h1').innerText = "Feliz Cumpleaños ❤";
+                document.querySelector('h1').innerText = "Feliz Cumpleaños ❤️";
     } else {
         const days = Math.floor(distance / (1000 * 60 * 60 * 24));
             const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
