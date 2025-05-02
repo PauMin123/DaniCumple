@@ -135,7 +135,63 @@
     }
 }
 
+@keyframes heartbeat {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
 
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes slideUpFearless {
+    from { transform: translateY(30px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes glow {
+    0% { box-shadow: 0 0 10px #EFC180; }
+    50% { box-shadow: 0 0 20px #EFC180,; }
+    100% { box-shadow: 0 0 10px #EFC180,; }
+}
+
+@keyframes starryGlow {
+    0% { box-shadow: 0 0 10px #FFD700, 0 0 20px rgba(255, 223, 0, 0.5); }
+    25% { box-shadow: 0 0 15px #FFD700, 0 0 25px rgba(255, 223, 0, 0.7); }
+    50% { box-shadow: 0 0 20px #FFD700, 0 0 30px rgba(255, 223, 0, 1); }
+    75% { box-shadow: 0 0 25px #FFD700, 0 0 35px rgba(255, 223, 0, 0.7); }
+    100% { box-shadow: 0 0 10px #FFD700, 0 0 20px rgba(255, 223, 0, 0.5); }
+}
+
+@keyframes swingRed {
+    0% { transform: rotate(0deg); }
+    50% { transform: rotate(10deg); }
+    100% { transform: rotate(0deg); }
+}
+
+@keyframes colorChange {
+    0% { background-color: #E02A2A; }
+    50% { background-color: #F24A4A; }
+    100% { background-color: #7A2E39; }
+}
+
+@keyframes slideInFolklore {
+    0% { transform: translateX(-100%); opacity: 0; }
+    100% { transform: translateX(0); opacity: 1; }
+}
+
+@keyframes moveLeaves {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(100%); }
+}
         body::after {
             content: "";
             position: absolute;
@@ -192,22 +248,26 @@
         .era-button[data-color="#A5C9A5"] {
             font-family: "Satisfaction", serif;  /* Fuente para Taylor Swift */
             box-shadow: 0 0 10px #A5C9A5, 0 0 20px #A5C9A5;  /* Brillo para Taylor Swift */
+            animation: fadeIn 2s ease-out;
         }
 
         .era-button[data-color="#EFC180"] {
             font-family: "Carla Sans Light", serif;  /* Fuente para Fearless */
             box-shadow: 0 0 10px #EFC180, 0 0 20px #EFC180;  /* Brillo para Fearless */
+            animation: slideUpFearless 1.5s ease-out, glow 1.5s ease-out infinite, starryGlow 2s ease-in-out infinite;
         }
 
         .era-button[data-color="#C7A8CB"] {
             font-family: "Jellyka Bees Antique Handwriting", serif;  /* Fuente para Speak Now */
             box-shadow: 0 0 10px #C7A8CB, 0 0 20px #C7A8CB;  /* Brillo para Speak Now */
+            
 
         }
 
         .era-button[data-color="#7A2E39"] {
             font-family: "Tungsten Condensed", serif;  /* Fuente para Red */
             box-shadow: 0 0 10px #7A2E39, 0 0 20px #7A2E39;  /* Brillo para Red */
+            animation: swingRed 1s ease-in-out infinite, colorChange 1.5s ease-in-out infinite;
 
         }
 
@@ -224,6 +284,7 @@
         .era-button[data-color="#F7B0CC"] {
             font-family: "Satisfy", serif;  /* Fuente para Lover */
             box-shadow: 0 0 10px #F7B0CC, 0 0 20px #F7B0CC;  /* Brillo para Lover */
+            animation: heartbeat 1s ease-in-out infinite;
         }
 
         .era-button[data-color="#CDC9C1"] {
@@ -269,7 +330,13 @@
 <body>
     <div id="content">
         <h1>"A veces, los mejores regalos toman tiempo. Cada segundo nos acerca más a algo único ¿Estás lista?"</h1>
+        <h1>"Daniela's Version"</h1>
         <div id="countdown">Faltan 00:00:00</div>
+        <audio id="countdownAudio" loop>
+            <source src="musica/Taylor Swift Reputation.mp3" type="audio/mpeg">
+            Tu navegador no soporta audio HTML5.
+          </audio>
+          
         <div id="eraButtons" style="display: none;">
             <audio id="audioPlayer" controls>
                 <source id="audioSource" src="" type="audio/mpeg">
@@ -294,12 +361,12 @@
     </div>
 
     <script>
-        const targetDate = new Date('2025-04-12T00:00:00').getTime();
+        const targetDate = new Date('2025-05-12T00:00:00').getTime();
 
         const albumData = {
             "Taylor Swift": {
-                "song": "musica/Taylor Swift - Tim McGraw.mp3",
-                "quote": "Pase lo que pase, seré tu siempre, en la sombra y en la luz ❤️",
+                "song": "musica/Our Song  Taylor Swift THE ERAS TOUR.mp3",
+                "quote": "Aunque el tiempo pase, tu seras mi cancion favorita.❤️",
                 "backgroundImage": "url('https://i.pinimg.com/originals/49/b9/47/49b9475075332d039fbdbddaafb1d0a0.jpg')",
                 "fontFamily": "'Satisfaction', serif"
             },
@@ -365,27 +432,39 @@
             }
         };
 
-        const countdownInterval = setInterval(() => {
+        const countdownAudio = document.getElementById("countdownAudio");
+
+const countdownInterval = setInterval(() => {
     const now = new Date().getTime();
     const distance = targetDate - now;
 
     if (distance <= 0) {
         clearInterval(countdownInterval);
-        document.getElementById("countdown").style.display = "none"; // Oculta la cuenta regresiva
-        document.getElementById("eraButtons").style.display = "block"; // Muestra los botones
+        document.getElementById("countdown").style.display = "none"; 
+        document.getElementById("eraButtons").style.display = "block";
+        document.getElementById("countdown").innerHTML = "🎉 ¡Sorpresa Revelada! 🎉";
+        document.querySelector('h1').innerText = "Feliz Cumpleaños ❤️";
+        document.querySelector('h2').innerText = "DANIELAS ERAS VERSION ❤️";
         
-        document.getElementById("countdown").innerHTML = "&#127881; ¡Sorpresa Revelada! &#127881;";
-                document.querySelector('h1').innerText = "Feliz Cumpleaños ❤️";
+        countdownAudio.pause(); // Detén la música cuando termina el conteo
+
     } else {
         const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+        const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
-            document.getElementById("countdown").innerHTML = `Faltan ${days}d ${hours}h ${minutes}m ${seconds}s`;
+        document.getElementById("countdown").innerHTML = `Faltan ${days}d ${hours}h ${minutes}m ${seconds}s`;
 
+        // Reproduce la música si no ha empezado
+        if (countdownAudio.paused) {
+            countdownAudio.play().catch(err => {
+                console.log("Autoplay bloqueado, se requiere interacción del usuario.");
+            });
+        }
     }
 }, 1000);
+
 
 
 function showAlbumInfo(albumName) {
