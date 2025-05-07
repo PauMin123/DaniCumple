@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Happy Birthday ❤️ </title>
+    <title>Eras Tour Danielas Version ❤️ </title>
     <style>
 
         /* Fuente ERAS TOUR TAYLOR SWIFT */
@@ -65,7 +65,7 @@
         /* Fuente SPEAK NOW */
         @font-face {
             font-family: "Jellyka Bees Antique Handwriting";
-            src: url("fuentes/Jellyka\ Bees\ Antique\ Handwriting.ttf") format("truetype");
+            src: url("fuentes/Jellyka Bees Antique Handwriting.ttf") format("truetype");
             font-weight: normal;
             font-style: normal;
         }
@@ -133,6 +133,18 @@
         background-attachment: scroll; /* Evita que la imagen se quede fija en pantallas más pequeñas */
         background-size: cover; /* Mantiene la imagen cubierta, sin distorsión */
     }
+    .era-button {
+        font-size: 1.2rem;
+        padding: 0.75rem;
+    }
+
+    h1 {
+        font-size: 1.8rem;
+    }
+
+    #countdown {
+        font-size: 2rem;
+    }
 }
 
 @keyframes heartbeat {
@@ -146,51 +158,239 @@
         transform: scale(1);
     }
 }
+        .overlay, .hearts-container, .confetti, .extra-effects {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            pointer-events: none;
+            z-index: 1000;
+        }
+        .overlay {
+            background-color: rgba(0,0,0,0.8);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 2rem;
+            opacity: 0;
+            transition: opacity 1s;
+        }
+        .heart {
+            position: absolute;
+            width: 30px;
+            height: 30px;
+            background: url('https://emojiapi.dev/api/v1/1f497.svg') no-repeat center;
+            background-size: contain;
+            animation: floatHeart 60s linear forwards;
+        }
+        @keyframes floatHeart {
+            0% { transform: translateY(100vh); opacity: 1; }
+            100% { transform: translateY(-100vh); opacity: 0; }
+        }
+        .overlay, .hearts-container, .confetti {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            pointer-events: none;
+            z-index: 1000;
+        }
+        .overlay {
+            background-color: rgba(0,0,0,0.8);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 2rem;
+            opacity: 0;
+            transition: opacity 1s;
+        }
+        .falling {
+            position: absolute;
+            width: 30px;
+            height: 30px;
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center;
+            animation: fallDown 30s linear forwards;
+        }
+
+        @keyframes fallDown {
+            0% { transform: translateY(-10vh); opacity: 1; }
+            100% { transform: translateY(110vh); opacity: 1; }
+        }
 
 @keyframes fadeIn {
     from { opacity: 0; }
     to { opacity: 1; }
 }
 
-@keyframes slideUpFearless {
+@keyframes slideUp {
     from { transform: translateY(30px); opacity: 0; }
     to { transform: translateY(0); opacity: 1; }
 }
 
-@keyframes glow {
+/* Taylor Swift (Verde Suave) */
+@keyframes glow-debut {
+    0% { box-shadow: 0 0 10px #A5C9A5; }
+    50% { box-shadow: 0 0 20px #A5C9A5; }
+    100% { box-shadow: 0 0 10px #A5C9A5; }
+}
+@keyframes starry-debut {
+    0% { box-shadow: 0 0 10px #A5C9A5, 0 0 20px rgba(165, 201, 165, 0.5); }
+    25% { box-shadow: 0 0 15px #A5C9A5, 0 0 25px rgba(165, 201, 165, 0.7); }
+    50% { box-shadow: 0 0 20px #A5C9A5, 0 0 30px rgba(165, 201, 165, 1); }
+    75% { box-shadow: 0 0 25px #A5C9A5, 0 0 35px rgba(165, 201, 165, 0.7); }
+    100% { box-shadow: 0 0 10px #A5C9A5, 0 0 20px rgba(165, 201, 165, 0.5); }
+}
+
+/* Fearless (Dorado Claro) */
+@keyframes glow-fearlees {
     0% { box-shadow: 0 0 10px #EFC180; }
-    50% { box-shadow: 0 0 20px #EFC180,; }
-    100% { box-shadow: 0 0 10px #EFC180,; }
+    50% { box-shadow: 0 0 20px #EFC180; }
+    100% { box-shadow: 0 0 10px #EFC180; }
+}
+@keyframes starry-fearless {
+    0% { box-shadow: 0 0 10px #EFC180, 0 0 20px rgba(239, 193, 128, 0.5); }
+    25% { box-shadow: 0 0 15px #EFC180, 0 0 25px rgba(239, 193, 128, 0.7); }
+    50% { box-shadow: 0 0 20px #EFC180, 0 0 30px rgba(239, 193, 128, 1); }
+    75% { box-shadow: 0 0 25px #EFC180, 0 0 35px rgba(239, 193, 128, 0.7); }
+    100% { box-shadow: 0 0 10px #EFC180, 0 0 20px rgba(239, 193, 128, 0.5); }
 }
 
-@keyframes starryGlow {
-    0% { box-shadow: 0 0 10px #FFD700, 0 0 20px rgba(255, 223, 0, 0.5); }
-    25% { box-shadow: 0 0 15px #FFD700, 0 0 25px rgba(255, 223, 0, 0.7); }
-    50% { box-shadow: 0 0 20px #FFD700, 0 0 30px rgba(255, 223, 0, 1); }
-    75% { box-shadow: 0 0 25px #FFD700, 0 0 35px rgba(255, 223, 0, 0.7); }
-    100% { box-shadow: 0 0 10px #FFD700, 0 0 20px rgba(255, 223, 0, 0.5); }
+/* Speak Now (Violeta Pastel) */
+@keyframes glow-speak_now {
+    0% { box-shadow: 0 0 10px #C7A8CB; }
+    50% { box-shadow: 0 0 20px #C7A8CB; }
+    100% { box-shadow: 0 0 10px #C7A8CB; }
+}
+@keyframes starry-speak_now {
+    0% { box-shadow: 0 0 10px #C7A8CB, 0 0 20px rgba(199, 168, 203, 0.5); }
+    25% { box-shadow: 0 0 15px #C7A8CB, 0 0 25px rgba(199, 168, 203, 0.7); }
+    50% { box-shadow: 0 0 20px #C7A8CB, 0 0 30px rgba(199, 168, 203, 1); }
+    75% { box-shadow: 0 0 25px #C7A8CB, 0 0 35px rgba(199, 168, 203, 0.7); }
+    100% { box-shadow: 0 0 10px #C7A8CB, 0 0 20px rgba(199, 168, 203, 0.5); }
 }
 
-@keyframes swingRed {
-    0% { transform: rotate(0deg); }
-    50% { transform: rotate(10deg); }
-    100% { transform: rotate(0deg); }
+/* Red (Rojo Oscuro) */
+@keyframes glow-red {
+    0% { box-shadow: 0 0 10px #7A2E39; }
+    50% { box-shadow: 0 0 20px #7A2E39; }
+    100% { box-shadow: 0 0 10px #7A2E39; }
+}
+@keyframes starry-red {
+    0% { box-shadow: 0 0 10px #7A2E39, 0 0 20px rgba(122, 46, 57, 0.5); }
+    25% { box-shadow: 0 0 15px #7A2E39, 0 0 25px rgba(122, 46, 57, 0.7); }
+    50% { box-shadow: 0 0 20px #7A2E39, 0 0 30px rgba(122, 46, 57, 1); }
+    75% { box-shadow: 0 0 25px #7A2E39, 0 0 35px rgba(122, 46, 57, 0.7); }
+    100% { box-shadow: 0 0 10px #7A2E39, 0 0 20px rgba(122, 46, 57, 0.5); }
+}
+
+/* 1989 (Celeste Claro) */
+@keyframes glow-1989 {
+    0% { box-shadow: 0 0 10px #B5E5F8; }
+    50% { box-shadow: 0 0 20px #B5E5F8; }
+    100% { box-shadow: 0 0 10px #B5E5F8; }
+}
+@keyframes starry-1989 {
+    0% { box-shadow: 0 0 10px #B5E5F8, 0 0 20px rgba(181, 229, 248, 0.5); }
+    25% { box-shadow: 0 0 15px #B5E5F8, 0 0 25px rgba(181, 229, 248, 0.7); }
+    50% { box-shadow: 0 0 20px #B5E5F8, 0 0 30px rgba(181, 229, 248, 1); }
+    75% { box-shadow: 0 0 25px #B5E5F8, 0 0 35px rgba(181, 229, 248, 0.7); }
+    100% { box-shadow: 0 0 10px #B5E5F8, 0 0 20px rgba(181, 229, 248, 0.5); }
+}
+
+/* Reputation (Gris Oscuro) */
+@keyframes glow-reputation {
+    0% { box-shadow: 0 0 10px #746F70; }
+    50% { box-shadow: 0 0 20px #746F70; }
+    100% { box-shadow: 0 0 10px #746F70; }
+}
+@keyframes starry-reputation {
+    0% { box-shadow: 0 0 10px #746F70, 0 0 20px rgba(116, 111, 112, 0.5); }
+    25% { box-shadow: 0 0 15px #746F70, 0 0 25px rgba(116, 111, 112, 0.7); }
+    50% { box-shadow: 0 0 20px #746F70, 0 0 30px rgba(116, 111, 112, 1); }
+    75% { box-shadow: 0 0 25px #746F70, 0 0 35px rgba(116, 111, 112, 0.7); }
+    100% { box-shadow: 0 0 10px #746F70, 0 0 20px rgba(116, 111, 112, 0.5); }
+}
+
+/* Lover (Rosa Claro) */
+@keyframes glow-lover {
+    0% { box-shadow: 0 0 10px #F7B0CC; }
+    50% { box-shadow: 0 0 20px #F7B0CC; }
+    100% { box-shadow: 0 0 10px #F7B0CC; }
+}
+@keyframes starry-lover {
+    0% { box-shadow: 0 0 10px #F7B0CC, 0 0 20px rgba(247, 176, 204, 0.5); }
+    25% { box-shadow: 0 0 15px #F7B0CC, 0 0 25px rgba(247, 176, 204, 0.7); }
+    50% { box-shadow: 0 0 20px #F7B0CC, 0 0 30px rgba(247, 176, 204, 1); }
+    75% { box-shadow: 0 0 25px #F7B0CC, 0 0 35px rgba(247, 176, 204, 0.7); }
+    100% { box-shadow: 0 0 10px #F7B0CC, 0 0 20px rgba(247, 176, 204, 0.5); }
+}
+
+/* folklore (Gris Cálido) */
+@keyframes glow-folklore {
+    0% { box-shadow: 0 0 10px #CDC9C1; }
+    50% { box-shadow: 0 0 20px #CDC9C1; }
+    100% { box-shadow: 0 0 10px #CDC9C1; }
+}
+@keyframes starry-folklore {
+    0% { box-shadow: 0 0 10px #CDC9C1, 0 0 20px rgba(205, 201, 193, 0.5); }
+    25% { box-shadow: 0 0 15px #CDC9C1, 0 0 25px rgba(205, 201, 193, 0.7); }
+    50% { box-shadow: 0 0 20px #CDC9C1, 0 0 30px rgba(205, 201, 193, 1); }
+    75% { box-shadow: 0 0 25px #CDC9C1, 0 0 35px rgba(205, 201, 193, 0.7); }
+    100% { box-shadow: 0 0 10px #CDC9C1, 0 0 20px rgba(205, 201, 193, 0.5); }
+}
+
+/* evermore (Marrón Suave) */
+@keyframes glow-evermore {
+    0% { box-shadow: 0 0 10px #C5AC90; }
+    50% { box-shadow: 0 0 20px #C5AC90; }
+    100% { box-shadow: 0 0 10px #C5AC90; }
+}
+@keyframes starry-evermore {
+    0% { box-shadow: 0 0 10px #C5AC90, 0 0 20px rgba(197, 172, 144, 0.5); }
+    25% { box-shadow: 0 0 15px #C5AC90, 0 0 25px rgba(197, 172, 144, 0.7); }
+    50% { box-shadow: 0 0 20px #C5AC90, 0 0 30px rgba(197, 172, 144, 1); }
+    75% { box-shadow: 0 0 25px #C5AC90, 0 0 35px rgba(197, 172, 144, 0.7); }
+    100% { box-shadow: 0 0 10px #C5AC90, 0 0 20px rgba(197, 172, 144, 0.5); }
+}
+
+/* Midnights (Azul Oscuro) */
+@keyframes glow-minights {
+    0% { box-shadow: 0 0 10px #242E47; }
+    50% { box-shadow: 0 0 20px #242E47; }
+    100% { box-shadow: 0 0 10px #242E47; }
+}
+@keyframes starry-midnights {
+    0% { box-shadow: 0 0 10px #242E47, 0 0 20px rgba(36, 46, 71, 0.5); }
+    25% { box-shadow: 0 0 15px #242E47, 0 0 25px rgba(36, 46, 71, 0.7); }
+    50% { box-shadow: 0 0 20px #242E47, 0 0 30px rgba(36, 46, 71, 1); }
+    75% { box-shadow: 0 0 25px #242E47, 0 0 35px rgba(36, 46, 71, 0.7); }
+    100% { box-shadow: 0 0 10px #242E47, 0 0 20px rgba(36, 46, 71, 0.5); }
+}
+
+/* The Tortured Poets Department (Beige Oscuro) */
+@keyframes glow-TTPD {
+    0% { box-shadow: 0 0 10px #544C3C; }
+    50% { box-shadow: 0 0 20px #544C3C; }
+    100% { box-shadow: 0 0 10px #544C3C; }
+}
+@keyframes starry-TTPD {
+    0% { box-shadow: 0 0 10px #544C3C, 0 0 20px rgba(84, 76, 60, 0.5); }
+    25% { box-shadow: 0 0 15px #544C3C, 0 0 25px rgba(84, 76, 60, 0.7); }
+    50% { box-shadow: 0 0 20px #544C3C, 0 0 30px rgba(84, 76, 60, 1); }
+    75% { box-shadow: 0 0 25px #544C3C, 0 0 35px rgba(84, 76, 60, 0.7); }
+    100% { box-shadow: 0 0 10px #544C3C, 0 0 20px rgba(84, 76, 60, 0.5); }
 }
 
 @keyframes colorChange {
     0% { background-color: #E02A2A; }
-    50% { background-color: #F24A4A; }
+    50% { background-color: #631313; }
     100% { background-color: #7A2E39; }
-}
-
-@keyframes slideInFolklore {
-    0% { transform: translateX(-100%); opacity: 0; }
-    100% { transform: translateX(0); opacity: 1; }
-}
-
-@keyframes moveLeaves {
-    0% { transform: translateX(0); }
-    100% { transform: translateX(100%); }
 }
         body::after {
             content: "";
@@ -230,7 +430,13 @@
             font-family: "Engravers Old English", serif;
         }
 
+        .era-button.visible {
+        display: inline-block;
+        opacity: 1;
+        }
+
         .era-button {
+            display: none; /* Los botones están ocultos por defecto */
             font-size: 1.5rem;
             padding: 1rem;
             margin: 0.5rem;
@@ -242,24 +448,27 @@
             transition: transform 0.2s, background-color 0.3s;
             min-width: 150px;  /* Asegura un tamaño mínimo en dispositivos pequeños */
             font-weight: bold;
+            transition: opacity 1s ease-in-out;
         }
 
      /* Fuentes específicas por color */
         .era-button[data-color="#A5C9A5"] {
             font-family: "Satisfaction", serif;  /* Fuente para Taylor Swift */
             box-shadow: 0 0 10px #A5C9A5, 0 0 20px #A5C9A5;  /* Brillo para Taylor Swift */
-            animation: fadeIn 2s ease-out;
+            animation: fadeIn 2s ease-out, glow-debut 1.5s ease-out infinite, starry-debut 2s ease-in-out infinite;
         }
 
         .era-button[data-color="#EFC180"] {
             font-family: "Carla Sans Light", serif;  /* Fuente para Fearless */
             box-shadow: 0 0 10px #EFC180, 0 0 20px #EFC180;  /* Brillo para Fearless */
-            animation: slideUpFearless 1.5s ease-out, glow 1.5s ease-out infinite, starryGlow 2s ease-in-out infinite;
+            --glow-color: #EFC180;
+            animation: slideUp 1.5s ease-out, glow-fearless 1.5s ease-out infinite, starry-fearless 2s ease-in-out infinite;
         }
 
         .era-button[data-color="#C7A8CB"] {
             font-family: "Jellyka Bees Antique Handwriting", serif;  /* Fuente para Speak Now */
             box-shadow: 0 0 10px #C7A8CB, 0 0 20px #C7A8CB;  /* Brillo para Speak Now */
+            animation: fadeIn 2s ease-out, glow-speak_now 1.5s ease-out infinite, starry-speak_now 2s ease-in-out infinite;
             
 
         }
@@ -267,44 +476,51 @@
         .era-button[data-color="#7A2E39"] {
             font-family: "Tungsten Condensed", serif;  /* Fuente para Red */
             box-shadow: 0 0 10px #7A2E39, 0 0 20px #7A2E39;  /* Brillo para Red */
-            animation: swingRed 1s ease-in-out infinite, colorChange 1.5s ease-in-out infinite;
+            animation: colorChange 1.5s ease-in-out infinite;
+            animation: slideUp 1.5s ease-out, glow-red 1.5s ease-out infinite, starry-red 2s ease-in-out infinite;
 
         }
 
         .era-button[data-color="#B5E5F8"] {
             font-family: "Taylor Swift Handwriting", sans-serif;  /* Fuente para 1989 */
             box-shadow: 0 0 10px #B5E5F8, 0 0 20px #B5E5F8;  /* Brillo para 1989 */
+            animation: fadeIn 2s ease-out, glow-1989 1.5s ease-out infinite, starry-1989 2s ease-in-out infinite;
         }
 
         .era-button[data-color="#746F70"] {
             font-family: "Engravers Old English", cursive;  /* Fuente para Reputation */
             box-shadow: 0 0 10px #746F70, 0 0 20px #746F70;  /* Brillo para Reputation */
+            animation: slideUp 1.5s ease-out, glow-reputation 1.5s ease-out infinite, starry-reputation 2s ease-in-out infinite;
         }
 
         .era-button[data-color="#F7B0CC"] {
             font-family: "Satisfy", serif;  /* Fuente para Lover */
             box-shadow: 0 0 10px #F7B0CC, 0 0 20px #F7B0CC;  /* Brillo para Lover */
-            animation: heartbeat 1s ease-in-out infinite;
+            animation: heartbeat 1s ease-in-out infinite, fadeIn 2s ease-out, glow-lover 1.5s ease-out infinite, starry-lover 2s ease-in-out infinite;
         }
 
         .era-button[data-color="#CDC9C1"] {
             font-family: "FePIit2", serif;  /* Fuente para folklore */
             box-shadow: 0 0 10px #CDC9C1, 0 0 20px #CDC9C1;  /* Brillo para Folklore */
+            animation: slideUp 1.5s ease-out, glow-folklore 1.5s ease-out infinite, starry-folklore 2s ease-in-out infinite;
         }
 
         .era-button[data-color="#C5AC90"] {
             font-family: "FePIit2", serif;  /* Fuente para evermore */
             box-shadow: 0 0 10px #C5AC90, 0 0 20px #C5AC90;  /* Brillo para Evermore */
+            animation: fadeIn 2s ease-out, glow-evermore 1.5s ease-out infinite, starry-evermore 2s ease-in-out infinite;
         }
 
         .era-button[data-color="#242E47"] {
             font-family: "NeueHaasDisplay-Bold", serif;  /* Fuente para Midnights */
             box-shadow: 0 0 10px #242E47, 0 0 20px #242E47;  /* Brillo para Midnights */
+            animation: slideUp 1.5s ease-out, glow-midnights 1.5s ease-out infinite, starry-midnights 2s ease-in-out infinite;
         }
 
         .era-button[data-color="#544C3C"] {
             font-family: "BigCaslonFB-Regular", serif;  /* Fuente para TTPD */
             box-shadow: 0 0 10px #544C3C, 0 0 20px #544C3C;  /* Brillo para TTPD */
+            animation: fadeIn 2s ease-out, glow-TTPD 1.5s ease-out infinite, starry-TTPD 2s ease-in-out infinite;
         }
 
         .era-button:hover {
@@ -322,8 +538,6 @@
         #audioPlayer {
             display: none;
         }
-
-        
         
     </style>
 </head>
@@ -343,25 +557,30 @@
                 Tu navegador no soporta el elemento de audio.
             </audio>
 
+            <div class="overlay" id="overlay"></div>
+            <div class="hearts-container" id="hearts"></div>
+            <div class="confetti" id="confetti"></div>
+            <div class="extra-effects" id="extraEffects"></div>
+
             <!-- Botones de los álbumes -->
-            <button class="era-button" data-color="#A5C9A5"  onclick="showAlbumInfo('Taylor Swift')">Taylor Swift</button>
-            <button class="era-button" data-color="#EFC180" onclick="showAlbumInfo('Fearless')">Fearless</button>
-            <button class="era-button" data-color="#C7A8CB" onclick="showAlbumInfo('Speak Now')">Speak Now</button>
-            <button class="era-button" data-color="#7A2E39" onclick="showAlbumInfo('Red')">Red</button>
-            <button class="era-button" data-color="#B5E5F8" onclick="showAlbumInfo('1989')">1989</button>
-            <button class="era-button" data-color="#746F70" onclick="showAlbumInfo('Reputation')">Reputation</button>
-            <button class="era-button" data-color="#F7B0CC" onclick="showAlbumInfo('Lover')">Lover</button>
-            <button class="era-button" data-color="#CDC9C1" onclick="showAlbumInfo('folklore')">folklore</button>
-            <button class="era-button" data-color="#C5AC90" onclick="showAlbumInfo('evermore')">evermore</button>
-            <button class="era-button" data-color="#242E47" onclick="showAlbumInfo('Midnights')">Midnights</button>
-            <button class="era-button" data-color="#544C3C" onclick="showAlbumInfo('TTPD')">TTPD</button>
+            <button class="era-button boton visible" data-color="#A5C9A5"  onclick="activateDebut(); showAlbumInfo('Taylor Swift')">Taylor Swift</button>
+            <button class="era-button" id="fearless" data-color="#EFC180" onclick="activateFearless(); showAlbumInfo('Fearless')">Fearless</button>
+            <button class="era-button" id="speaknow" data-color="#C7A8CB" onclick="activateSpeakNow(); showAlbumInfo('Speak Now')">Speak Now</button>
+            <button class="era-button" id="red" data-color="#7A2E39" onclick="activateRed(); showAlbumInfo('Red')">Red</button>
+            <button class="era-button" id="1989" data-color="#B5E5F8" onclick="activate1989(); showAlbumInfo('1989')">1989</button>
+            <button class="era-button" id="reputation" data-color="#746F70" onclick="activateReputation(); showAlbumInfo('Reputation')">Reputation</button>
+            <button class="era-button" id="lover" data-color="#F7B0CC" onclick="activateLover();showAlbumInfo('Lover')">Lover</button>
+            <button class="era-button" id="folklore" data-color="#CDC9C1" onclick="activateFolklore(); showAlbumInfo('folklore')">folklore</button>
+            <button class="era-button" id="evermore" data-color="#C5AC90" onclick="activateEvermore();showAlbumInfo('evermore')">evermore</button>
+            <button class="era-button" id="midnights" data-color="#242E47" onclick="activateMidnights(); showAlbumInfo('Midnights')">Midnights</button>
+            <button class="era-button" id="ttpd" data-color="#544C3C" onclick="activateTTPD(); showAlbumInfo('TTPD')">TTPD</button>
             
         </div>
         <div id="albumInfo" class="era-info"></div>
     </div>
 
     <script>
-        const targetDate = new Date('2025-05-12T00:00:00').getTime();
+        const targetDate = new Date('2025-04-12T00:00:00').getTime();
 
         const albumData = {
             "Taylor Swift": {
@@ -384,19 +603,19 @@
             },
             "Red": {
                 "song": "musica/Taylor Swift - Everything Has Changed.mp3",
-                "quote": "Desde que te conocí, cambió mi forma de ver el mundo me hiciste creer en el amor, y en que todo es hermoso si estás con la persona correcta. ❤️",
+                "quote": "Desde que te conocí, cambió mi forma de ver el mundo. Me hiciste creer en el amor y en que todo es hermoso si estás con la persona correcta. ❤️",
                 "backgroundImage": "url('fuentes/RED.jpg')",
                 "fontFamily": "'Tungsten Condensed', serif"
             },
             "1989": {
                 "song": "musica/Taylor Swift - This Love.mp3",
-                "quote": "Aunque este amor sea complicado, siempre vuelve y eso solo me confirma que es nuestro destino. Te amo con todo mi corazon. ❤️",
+                "quote": "Aunque este amor sea complicado, siempre vuelve y eso solo me confirma que es nuestro destino. Este amor dejo una marca permanente ❤️",
                 "backgroundImage": "url('https://i.pinimg.com/736x/70/ce/6c/70ce6ce00bb3820d35bd91ed73821bd1.jpg')",
                 "fontFamily": "'Taylor Swift Handwriting', sans-serif"
             },
             "Reputation": {
                 "song": "musica/Taylor Swift - Delicate.mp3",
-                "quote": "Tú eres como un tulipán: hermosa y delicada y yo solo quiero cuidarte cada día, porque sé que este amor es real,aunque el mundo no lo entienda. ❤️",
+                "quote": "Tú eres como un tulipán: hermosa y delicada y yo solo quiero cuidarte cada día, porque sé que este amor es real, aunque el mundo no lo entienda. ❤️",
                 "backgroundImage": "url('https://i.pinimg.com/736x/a9/1f/71/a91f717c30d70b3215d7127ee5bde45f.jpg')",
                 "fontFamily": "'Engravers Old English', serif"
             },
@@ -408,7 +627,7 @@
             },
             "folklore": {
                 "song": "musica/Taylor Swift  invisible string.mp3",
-                "quote": "Tú y yo estamos unidos por un hilo dorado, un lazo irrompible, el hilo rojo del destino. Sabemos que estamos destinados a estar juntos, sin importar lo que pase. ❤️",
+                "quote": "Tú y yo estamos unidos por un hilo dorado, un lazo irrompible. Sabemos que estamos destinados a estar juntos, sin importar lo que pase. ❤️",
                 "backgroundImage": "url('https://i.pinimg.com/736x/53/70/e4/5370e4b82556e230e04bdc59c184e6d5.jpg')",
                 "fontFamily": "'NeueHaasDisplay-Bold', serif"
             },
@@ -420,7 +639,7 @@
             },
             "Midnights": {
                 "song": "musica/Taylor Swift - Snow On The Beach.mp3",
-                "quote": "Enamorarse de ti es como ver nieve en la playa algo irreal, pero maravillosamente hermoso. Esta canción refleja lo que siento por ti. ❤️",
+                "quote": "Enamorarme de ti fue como ver nieve en la playa algo irreal, pero completamente maravilloso. ❤️",
                 "backgroundImage": "url('fuentes/Midnights.jpg')",
                 "fontFamily": "'NeueHaasDisplay-Bold', serif"
             },
@@ -443,11 +662,29 @@ const countdownInterval = setInterval(() => {
         document.getElementById("countdown").style.display = "none"; 
         document.getElementById("eraButtons").style.display = "block";
         document.getElementById("countdown").innerHTML = "🎉 ¡Sorpresa Revelada! 🎉";
-        document.querySelector('h1').innerText = "Feliz Cumpleaños ❤️";
-        document.querySelector('h2').innerText = "DANIELAS ERAS VERSION ❤️";
+        const h1 = document.querySelector('h1');
+  h1.innerHTML = `
+    Feliz Cumpleaños 
+    <a href="https://open.spotify.com/playlist/7L7ARXHBmE8CxbXi2aU6Ml?si=5fc7326bdbc64a9d" target="_blank" style="
+      text-decoration: none;
+      font-size: 40px;
+    ">❤️</a><br>Danielas Version
+  `;
         
-        countdownAudio.pause(); // Detén la música cuando termina el conteo
+        
+         // Elimina los h1 con frases anteriores
+    const allH1s = document.querySelectorAll('h1');
+    allH1s.forEach(h1 => {
+        if (
+            h1.innerText.includes("A veces, los mejores regalos") ||
+            h1.innerText.includes("Daniela's Version")
+        ) {
+            h1.remove();
+        }
+    });
 
+    countdownAudio.pause(); // Detén la música cuando termina el conteo
+    
     } else {
         const days = Math.floor(distance / (1000 * 60 * 60 * 24));
         const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
@@ -509,7 +746,141 @@ document.querySelectorAll('.era-button').forEach(button => {
     });
 });
 
+//Activar emojis para que cubran la pantalla
 
+function showOverlay(text) {
+            const overlay = document.getElementById('overlay');
+            overlay.innerText = text;
+            overlay.style.opacity = 1;
+            setTimeout(() => {
+                overlay.style.opacity = 0;
+            }, 3000);
+        }
+
+         function createFallingImageElements(imageUrl, count) {
+            for (let i = 0; i < count; i++) {
+                const el = document.createElement('div');
+                el.className = 'falling';
+                el.style.left = Math.random() * 100 + 'vw';
+                el.style.top = (Math.random() * -50) + 'vh';
+                el.style.backgroundImage = `url('${imageUrl}')`;
+                document.body.appendChild(el);
+                setTimeout(() => el.remove(), 30000);
+            }
+        }
+
+        function createHearts(quantity) {
+            for (let i = 0; i < quantity; i++) {
+                const heart = document.createElement('div');
+                heart.className = 'heart';
+                heart.style.left = Math.random() * 100 + 'vw';
+                heart.style.top = '100vh';
+                document.getElementById('hearts').appendChild(heart);
+                setTimeout(() => heart.remove(), 60000);
+            }
+        }
+
+        function activateDebut() {
+            createFallingImageElements('fuentes/butterfly.png', 25);
+            createFallingImageElements('fuentes/green heart.png', 25);
+            createFallingImageElements('fuentes/hoja.png', 25);
+            showOverlay("\"I want to kiss you ❤️\"");
+        }
+
+        function activateFearless() {
+            createFallingImageElements('fuentes/yellow heart.png', 50);
+            createFallingImageElements('fuentes/star.png', 50);
+            showOverlay("\"It's a love story, baby, just say, Yes ❤️\"");
+        }
+
+        function activateSpeakNow() {
+            createFallingImageElements('https://emojiapi.dev/api/v1/2728.svg', 25);
+            createFallingImageElements('https://emojiapi.dev/api/v1/1f386.svg', 25);
+            showOverlay("\"I fell in love with a careless man's careful daughter, She is the best thing that's ever been mine ❤️\"");
+        }
+
+        function activateRed() {
+            createFallingImageElements('fuentes/bufanda.png', 25);
+            createFallingImageElements('fuentes/fall leaf.png', 25);
+            showOverlay("\"You'll be mine and I'll be yours ❤️\"");
+        }
+
+        function activate1989() {
+            createFallingImageElements('fuentes/diamond.png', 25);
+            createFallingImageElements('fuentes/light blue heart.png', 50);
+            showOverlay("\"This love left a permanent mark ❤️\"");
+        }
+
+        function activateReputation() {
+            createFallingImageElements('fuentes/tulip.png', 25);
+            createFallingImageElements('fuentes/diamond.png', 25);
+            createFallingImageElements('fuentes/red heart.png', 25);
+            showOverlay("\"I want to wear your initial on a chain round my neck ❤️\"");
+        }
+
+
+        function activateLover() {
+            for (let i = 0; i < 20; i++) {
+                const heart = document.createElement('div');
+                heart.className = 'heart';
+                heart.style.left = Math.random() * 100 + 'vw';
+                heart.style.top = Math.random() * 100 + 'vh';
+                document.getElementById('hearts').appendChild(heart);
+                setTimeout(() => heart.remove(), 30000);
+            }
+            document.body.style.backgroundColor = '#ffe6f0';
+            setTimeout(() => document.body.style.backgroundColor = '#000', 3000);
+            showOverlay("\"I like shiny things, but I'd marry you with paper rings ❤️\"");
+        }
+
+        function activateFolklore() {
+            createFallingImageElements('fuentes/saturn.svg', 50);
+            createFallingImageElements('fuentes/moon.png', 50);
+            createFallingImageElements('fuentes/white heart.png', 50);
+            showOverlay("\"Love you to the moon and to Saturn ❤️🪐\"");
+           }
+
+        function activateEvermore() {
+            createFallingImageElements('https://emojiapi.dev/api/v1/1f342.svg', 50);
+            showOverlay("\"Show me the places where the others gave you scars ❤️\"");
+        }
+
+        function activateMidnights() {
+            createFallingImageElements('https://emojiapi.dev/api/v1/2744.svg', 25);
+            createFallingImageElements('https://emojiapi.dev/api/v1/2b50.svg', 25);
+            showOverlay("\"My smile is like I won a contest And to hide that would be so dishonest ❤️\"");
+        }
+
+        function activateTTPD() {
+            createFallingImageElements('https://emojiapi.dev/api/v1/1f48c.svg', 25);
+            createFallingImageElements('fuentes/red heart.png', 25);
+            showOverlay("\"Cause the sign on your heart Said it's still reserved for me Honestly, who are we to fight the alchemy? ❤️\"");
+        }
+
+        const momentos = [
+        { tiempo: 10, botonId: 'fearless' },
+        { tiempo: 20, botonId: 'speaknow' },
+        { tiempo: 30, botonId: 'red' },
+        { tiempo: 40, botonId: '1989' },
+        { tiempo: 50, botonId: 'reputation' },
+        { tiempo: 60, botonId: 'lover' },
+        { tiempo: 70, botonId: 'folklore' },
+        { tiempo: 80, botonId: 'evermore' },
+        { tiempo: 90, botonId: 'midnights' },
+        { tiempo: 100, botonId: 'ttpd' }
+    ];
+
+    // Al cargar la página, se crean los temporizadores para mostrar cada botón
+    window.addEventListener('DOMContentLoaded', () => {
+        momentos.forEach(momento => {
+            setTimeout(() => {
+                const boton = document.getElementById(momento.botonId);
+                if (boton) {
+                    boton.classList.add('visible');
+                }
+            }, momento.tiempo * 1000); // Convertir a milisegundos
+        });
+    });
     </script>
 </body>
 </html>
